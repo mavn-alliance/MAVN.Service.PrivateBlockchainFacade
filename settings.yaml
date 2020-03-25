@@ -1,0 +1,64 @@
+PrivateBlockchainFacadeService:
+  Db:
+    LogsConnString:
+      settings-key: PrivateBlockchainFacadeService-LogsConnString
+      types:
+        - AzureTableStorage
+    DataConnString:
+      settings-key: PrivateBlockchainFacadeService-DataConnString
+    CommandTimeoutSeconds:
+      settings-key: PrivateBlockchainFacadeService-CommandTimeoutSeconds
+  Blockchain:
+    PrivateBlockchainGatewayContractAddress:
+      settings-key: PrivateBlockchainGatewayContractAddress
+  MasterWalletAddress:
+    settings-key: PrivateBlockchainFacadeService-MasterWalletAddress
+  MaxNewOperationsAmountPerRequest:
+    settings-key: PrivateBlockchainFacadeService-MaxNewOperationsAmountPerRequest
+  MaxAcceptedOperationsAmountPerRequest:
+    settings-key: PrivateBlockchainFacadeService-MaxAcceptedOperationsAmountPerRequest
+  BalancesCacheExpirationPeriod:
+    settings-key: PrivateBlockchainFacadeService-BalancesCacheExpirationPeriod
+  Rabbit:
+    Publishers:
+      CustomerRabbitConnectionString:
+        settings-key: UserManagementRabbitMQ
+        types:
+          - RabbitMq
+      WalletRabbitConnectionString:
+        settings-key: WalletManagementRabbitMQ
+        types:
+          - RabbitMq
+    Subscribers:
+      PrivateBlockchainRabbitConnString:
+        settings-key: PrivateBlockchainRabbitMQ
+        types:
+          - RabbitMq
+  CacheSettings:
+    DataCacheInstance:
+      settings-key: PrivateBlockchainFacadeService-DataCacheInstance
+    RedisConfiguration:
+      settings-key: PrivateBlockchainFacadeService-RedisConfiguration
+  ApiKey:
+    settings-key: PrivateBlockchainFacadeService-ApiKey
+  IsPublicBlockchainFeatureDisabled:
+    settings-key: IsPublicBlockchainFeatureDisabled
+    types:
+      - Optional
+SlackNotifications:
+  AzureQueue:
+    ConnectionString:
+      settings-key: SlackNotificationsConnString
+      types:
+        - AzureTableStorage
+    QueueName:
+      settings-key: SlackQueueName
+MonitoringServiceClient:
+  MonitoringServiceUrl:
+    settings-key: MonitoringServiceUrl
+QuorumTransactionSignerService:
+  ServiceUrl:
+    settings-key: QuorumTransactionSignerServiceUrl
+QuorumOperationExecutorService:
+  ServiceUrl:
+    settings-key: QuorumOperationExecutorServiceUrl
