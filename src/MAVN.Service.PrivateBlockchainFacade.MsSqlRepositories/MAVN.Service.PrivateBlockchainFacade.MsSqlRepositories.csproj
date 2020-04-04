@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Version>1.0.0</Version>
+    <RootNamespace>MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Lykke.Common.MsSql" Version="2.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAVN.Service.PrivateBlockchainFacade.Domain\MAVN.Service.PrivateBlockchainFacade.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="SQL\GetNonceCounter.sql" />
+    <EmbeddedResource Include="SQL\GetNonceCounter.sql" />
+  </ItemGroup>
+</Project>
