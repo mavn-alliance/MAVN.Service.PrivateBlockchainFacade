@@ -22,7 +22,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Lykke.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication.BonusRewardDeduplicationLogEntity", b =>
+            modelBuilder.Entity("MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication.BonusRewardDeduplicationLogEntity", b =>
                 {
                     b.Property<string>("DeduplicationKey")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Migrations
                     b.ToTable("bonus_reward_deduplication_log");
                 });
 
-            modelBuilder.Entity("Lykke.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication.OperationDeduplicationLogEntity", b =>
+            modelBuilder.Entity("MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication.OperationDeduplicationLogEntity", b =>
                 {
                     b.Property<string>("DeduplicationKey")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Migrations
                     b.ToTable("operation_deduplication_log");
                 });
 
-            modelBuilder.Entity("Lykke.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication.TransferDeduplicationLogEntity", b =>
+            modelBuilder.Entity("MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication.TransferDeduplicationLogEntity", b =>
                 {
                     b.Property<string>("DeduplicationKey")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Migrations
                     b.ToTable("transfer_deduplication_log");
                 });
 
-            modelBuilder.Entity("Lykke.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.NonceCounterEntity", b =>
+            modelBuilder.Entity("MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.NonceCounterEntity", b =>
                 {
                     b.Property<string>("MasterWalletAddress")
                         .ValueGeneratedOnAdd()
@@ -78,7 +78,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Migrations
                     b.ToTable("nonce_counters");
                 });
 
-            modelBuilder.Entity("Lykke.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.OperationEntity", b =>
+            modelBuilder.Entity("MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.OperationEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -128,7 +128,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Migrations
                     b.ToTable("operations");
                 });
 
-            modelBuilder.Entity("Lykke.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.OperationRequestEntity", b =>
+            modelBuilder.Entity("MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.OperationRequestEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -170,7 +170,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Migrations
                     b.ToTable("operation_requests");
                 });
 
-            modelBuilder.Entity("Lykke.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.WalletOwnerEntity", b =>
+            modelBuilder.Entity("MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.WalletOwnerEntity", b =>
                 {
                     b.Property<string>("OwnerId")
                         .ValueGeneratedOnAdd()
