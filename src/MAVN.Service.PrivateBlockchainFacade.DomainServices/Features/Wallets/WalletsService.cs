@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
@@ -7,7 +7,7 @@ using MAVN.Service.PrivateBlockchainFacade.Domain.Common;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using Lykke.Service.QuorumTransactionSigner.Client;
-using CustomerWalletCreationError = Lykke.Service.PrivateBlockchainFacade.Domain.Features.Wallets.CustomerWalletCreationError;
+using CustomerWalletCreationError = MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets.CustomerWalletCreationError;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.Features.Wallets
 {

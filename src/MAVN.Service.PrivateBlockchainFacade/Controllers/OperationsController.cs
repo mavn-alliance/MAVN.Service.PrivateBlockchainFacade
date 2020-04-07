@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
@@ -10,7 +10,7 @@ using MAVN.Service.PrivateBlockchainFacade.Contract.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using AddOperationError = Lykke.Service.PrivateBlockchainFacade.Client.AddOperationError;
+using AddOperationError = MAVN.Service.PrivateBlockchainFacade.Client.AddOperationError;
 
 namespace MAVN.Service.PrivateBlockchainFacade.Controllers
 {
