@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Net;
 using System.Threading.Tasks;
 using MAVN.Service.PrivateBlockchainFacade.Client;
 using MAVN.Service.PrivateBlockchainFacade.Client.Models;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Fees;
 using Microsoft.AspNetCore.Mvc;
-using FeesError = Lykke.Service.PrivateBlockchainFacade.Client.FeesError;
+using FeesError = MAVN.Service.PrivateBlockchainFacade.Client.FeesError;
 
 namespace MAVN.Service.PrivateBlockchainFacade.Controllers
 {

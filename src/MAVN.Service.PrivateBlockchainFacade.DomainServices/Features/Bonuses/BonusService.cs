@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
@@ -10,7 +10,7 @@ using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Bonuses;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication;
-using BonusRewardError = Lykke.Service.PrivateBlockchainFacade.Domain.Features.Bonuses.BonusRewardError;
+using BonusRewardError = MAVN.Service.PrivateBlockchainFacade.Domain.Features.Bonuses.BonusRewardError;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.Features.Bonuses
 {
