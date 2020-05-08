@@ -1,7 +1,7 @@
-using System.Threading.Tasks;
-using Falcon.Numerics;
+﻿using System.Threading.Tasks;
+using MAVN.Numerics;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Services;
-using Lykke.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumOperationExecutor.Client;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices
 {

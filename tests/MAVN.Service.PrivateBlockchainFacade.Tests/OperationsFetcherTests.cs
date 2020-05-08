@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Common;
@@ -10,7 +10,7 @@ using MAVN.Service.PrivateBlockchainFacade.DomainServices.Common;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
-using Lykke.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumOperationExecutor.Client;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Moq;

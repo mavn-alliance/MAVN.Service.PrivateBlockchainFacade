@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Lykke.Logs;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
@@ -6,8 +6,8 @@ using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.Common;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.Features.Operations;
-using Lykke.Service.QuorumOperationExecutor.Client;
-using Lykke.Service.QuorumOperationExecutor.Client.Models.Responses;
+using MAVN.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumOperationExecutor.Client.Models.Responses;
 using Moq;
 using Xunit;
 

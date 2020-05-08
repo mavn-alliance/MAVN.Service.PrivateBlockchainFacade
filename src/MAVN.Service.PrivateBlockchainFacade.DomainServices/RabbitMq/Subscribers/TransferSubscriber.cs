@@ -1,8 +1,9 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using Lykke.Job.QuorumTransactionWatcher.Contract;
+using MAVN.Job.QuorumTransactionWatcher.Contract;
 using Lykke.RabbitMqBroker.Subscriber;
+using MAVN.Numerics;
 using MAVN.Service.PrivateBlockchainFacade.Domain.RabbitMq;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribers
@@ -27,8 +28,8 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
         {
             await _transferEventHandler.HandleAsync(
                 evt.SourceAddress, 
-                evt.TargetAddress, 
-                evt.Amount,
+                evt.TargetAddress,
+                Money18.Parse(evt.Amount.ToString()),
                 evt.TransactionHash, 
                 evt.ObservedAt);
             

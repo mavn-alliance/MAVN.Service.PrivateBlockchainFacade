@@ -6,7 +6,7 @@ using MAVN.Service.PrivateBlockchainFacade.Contract.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Common;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
-using Lykke.Service.QuorumTransactionSigner.Client;
+using MAVN.Service.QuorumTransactionSigner.Client;
 using CustomerWalletCreationError = MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets.CustomerWalletCreationError;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.Features.Wallets

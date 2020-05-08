@@ -1,8 +1,8 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using MAVN.Service.PrivateBlockchainFacade.Settings;
-using Lykke.Service.QuorumOperationExecutor.Client;
-using Lykke.Service.QuorumTransactionSigner.Client;
+using MAVN.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumTransactionSigner.Client;
 using Lykke.SettingsReader;
 
 namespace MAVN.Service.PrivateBlockchainFacade.Modules

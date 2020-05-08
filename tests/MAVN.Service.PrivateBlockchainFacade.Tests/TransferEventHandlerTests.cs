@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Common;
 using Lykke.Logs;
@@ -11,7 +11,7 @@ using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using MAVN.Service.PrivateBlockchainFacade.Domain.RabbitMq;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Handlers;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
-using Lykke.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumOperationExecutor.Client;
 using Moq;
 using Xunit;
 

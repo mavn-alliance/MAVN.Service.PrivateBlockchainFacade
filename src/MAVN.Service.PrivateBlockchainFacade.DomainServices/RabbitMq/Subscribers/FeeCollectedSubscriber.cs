@@ -1,8 +1,9 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using Lykke.Job.QuorumTransactionWatcher.Contract;
+using MAVN.Job.QuorumTransactionWatcher.Contract;
 using Lykke.RabbitMqBroker.Subscriber;
+using MAVN.Numerics;
 using MAVN.Service.PrivateBlockchainFacade.Domain.RabbitMq;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribers
@@ -25,7 +26,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
 
         protected override async Task ProcessMessageAsync(FeeCollectedEvent evt)
         {
-            await _handler.HandleAsync(evt.EventId, evt.WalletAddress, evt.Reason, evt.Amount, evt.TransactionHash);
+            await _handler.HandleAsync(evt.EventId, evt.WalletAddress, evt.Reason, Money18.Parse(evt.Amount.ToString()), evt.TransactionHash);
 
             _log.Info("Processed FeeCollectedEvent", evt);
         }

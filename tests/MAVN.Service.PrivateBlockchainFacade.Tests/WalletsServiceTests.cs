@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Lykke.Logs;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
@@ -6,8 +6,8 @@ using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.Common;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.Features.Wallets;
-using Lykke.Service.QuorumTransactionSigner.Client;
-using Lykke.Service.QuorumTransactionSigner.Client.Models.Responses;
+using MAVN.Service.QuorumTransactionSigner.Client;
+using MAVN.Service.QuorumTransactionSigner.Client.Models.Responses;
 using Moq;
 using Xunit;
 
