@@ -1,8 +1,9 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using Lykke.Job.QuorumTransactionWatcher.Contract;
+using MAVN.Job.QuorumTransactionWatcher.Contract;
 using Lykke.RabbitMqBroker.Subscriber;
+using MAVN.Numerics;
 using MAVN.Service.PrivateBlockchainFacade.Domain.RabbitMq;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribers
@@ -27,7 +28,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
 
         protected override async Task ProcessMessageAsync(SeizedFromEvent message)
         {
-            await _handler.HandleAsync(message.Address, message.Amount);
+            await _handler.HandleAsync(message.Address, Money18.Parse(message.Amount.ToString()));
 
             _log.Info("Handled SeizedFromEvent", message);
         }

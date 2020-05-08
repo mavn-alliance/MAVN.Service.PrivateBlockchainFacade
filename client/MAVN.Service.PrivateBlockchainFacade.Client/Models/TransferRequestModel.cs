@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using JetBrains.Annotations;
-using Falcon.Numerics;
+using MAVN.Numerics;
 
 namespace MAVN.Service.PrivateBlockchainFacade.Client.Models
 {

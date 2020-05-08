@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using Lykke.RabbitMqBroker.Publisher;
 using MAVN.Service.PrivateBlockchainFacade.Contract.Events;
 using MAVN.Service.PrivateBlockchainFacade.Contract.Operations;
@@ -11,8 +11,8 @@ using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Balances;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using MAVN.Service.PrivateBlockchainFacade.Domain.RabbitMq;
-using Lykke.Service.QuorumOperationExecutor.Client;
-using Lykke.Service.QuorumOperationExecutor.Client.Models.Responses;
+using MAVN.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumOperationExecutor.Client.Models.Responses;
 using Newtonsoft.Json;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Handlers

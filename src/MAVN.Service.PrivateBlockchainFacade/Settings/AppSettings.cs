@@ -1,7 +1,7 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using Lykke.Sdk.Settings;
-using Lykke.Service.QuorumOperationExecutor.Client;
-using Lykke.Service.QuorumTransactionSigner.Client;
+using MAVN.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumTransactionSigner.Client;
 
 namespace MAVN.Service.PrivateBlockchainFacade.Settings
 {

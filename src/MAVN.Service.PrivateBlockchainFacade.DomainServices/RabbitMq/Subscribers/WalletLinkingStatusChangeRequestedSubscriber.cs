@@ -1,9 +1,10 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
 using Lykke.RabbitMqBroker.Subscriber;
-using Lykke.Service.CrossChainWalletLinker.Contract.Linking;
+using MAVN.Service.CrossChainWalletLinker.Contract.Linking;
 using MAVN.Service.PrivateBlockchainFacade.Domain.RabbitMq;
+using MAVN.Numerics;
 
 namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribers
 {
@@ -29,7 +30,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
             if (message.Direction == LinkingDirection.Link)
             {
                 await _handler.HandleWalletLinkingAsync(message.EventId, message.CustomerId,
-                    message.MasterWalletAddress, message.PrivateAddress, message.PublicAddress, message.Fee);
+                    message.MasterWalletAddress, message.PrivateAddress, message.PublicAddress, Money18.Parse(message.Fee.ToString()));
             }
             else
             {

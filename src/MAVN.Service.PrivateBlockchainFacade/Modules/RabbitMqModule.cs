@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using JetBrains.Annotations;
 using Lykke.Common;
-using Lykke.Job.QuorumTransactionWatcher.Contract;
+using MAVN.Job.QuorumTransactionWatcher.Contract;
 using Lykke.RabbitMqBroker.Publisher;
 using MAVN.Service.PrivateBlockchainFacade.Contract.Events;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribers;
@@ -109,7 +109,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.Modules
                 .As<IStartStop>()
                 .SingleInstance()
                 .WithParameter("connectionString", _rabbitSettings.Subscribers.PrivateBlockchainRabbitConnString)
-                .WithParameter("exchangeName", Context.GetEndpointName<Lykke.Job.QuorumTransactionWatcher.Contract.FeeCollectedEvent>())
+                .WithParameter("exchangeName", Context.GetEndpointName<MAVN.Job.QuorumTransactionWatcher.Contract.FeeCollectedEvent>())
                 .WithParameter("queueName", DefaultQueueName);
 
             builder.RegisterType<CustomerProfileDeactivationRequestedSubscriber>()

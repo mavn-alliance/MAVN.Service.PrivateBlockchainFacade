@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Lykke.Logs;
 using Lykke.RabbitMqBroker.Publisher;
@@ -8,8 +8,8 @@ using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Handlers;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
-using Lykke.Service.QuorumOperationExecutor.Client;
-using Lykke.Service.QuorumOperationExecutor.Client.Models.Responses;
+using MAVN.Service.QuorumOperationExecutor.Client;
+using MAVN.Service.QuorumOperationExecutor.Client.Models.Responses;
 using Moq;
 using Xunit;
 
