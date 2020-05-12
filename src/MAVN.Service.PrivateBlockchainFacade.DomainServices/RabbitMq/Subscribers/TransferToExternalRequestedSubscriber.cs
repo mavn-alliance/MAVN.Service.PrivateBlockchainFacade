@@ -27,7 +27,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
 
         protected override async Task ProcessMessageAsync(TransferToExternalRequestedEvent message)
         {
-            await _handler.HandleAsync(message.OperationId, message.CustomerId, Money18.Parse(message.Amount.ToString()),
+            await _handler.HandleAsync(message.OperationId, message.CustomerId, message.Amount,
                 message.PrivateBlockchainGatewayContractAddress);
             _log.Info("Processed TransferToExternalRequestedEvent", message);
         }

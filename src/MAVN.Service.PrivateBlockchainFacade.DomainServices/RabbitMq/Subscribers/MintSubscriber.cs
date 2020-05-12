@@ -26,7 +26,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
 
         protected override async Task ProcessMessageAsync(MintEvent evt)
         {
-            await _mintEventHandler.HandleAsync(evt.TransactionHash, Money18.Parse(evt.Amount.ToString()), evt.TargetAddress, evt.ObservedAt);
+            await _mintEventHandler.HandleAsync(evt.TransactionHash, evt.Amount, evt.TargetAddress, evt.ObservedAt);
             _log.Info("Processed Mint Event", evt);
         }
     }

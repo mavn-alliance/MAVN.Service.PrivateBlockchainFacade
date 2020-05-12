@@ -28,7 +28,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
 
         protected override async Task ProcessMessageAsync(SeizedFromEvent message)
         {
-            await _handler.HandleAsync(message.Address, Money18.Parse(message.Amount.ToString()));
+            await _handler.HandleAsync(message.Address, message.Amount);
 
             _log.Info("Handled SeizedFromEvent", message);
         }

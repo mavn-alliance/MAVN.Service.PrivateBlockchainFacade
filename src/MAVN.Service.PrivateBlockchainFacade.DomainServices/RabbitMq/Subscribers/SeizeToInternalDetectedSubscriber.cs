@@ -27,7 +27,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
 
         protected override async Task ProcessMessageAsync(SeizeToInternalDetectedEvent @event)
         {
-            await _seizeToInternalDetectedHandler.HandleAsync(@event.OperationId, Money18.Parse(@event.Amount.ToString()), @event.Reason);
+            await _seizeToInternalDetectedHandler.HandleAsync(@event.OperationId, @event.Amount, @event.Reason);
 
             _log.Info("Processed seize event.",
                 $"operationId: {@event.OperationId}; account : {@event.Account}; amount: {@event.Amount}; reason: {@event.Reason}");
