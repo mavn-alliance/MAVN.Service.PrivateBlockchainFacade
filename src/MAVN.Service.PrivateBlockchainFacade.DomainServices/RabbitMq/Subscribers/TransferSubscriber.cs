@@ -29,7 +29,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
             await _transferEventHandler.HandleAsync(
                 evt.SourceAddress, 
                 evt.TargetAddress,
-                Money18.Parse(evt.Amount.ToString()),
+                evt.Amount,
                 evt.TransactionHash, 
                 evt.ObservedAt);
             

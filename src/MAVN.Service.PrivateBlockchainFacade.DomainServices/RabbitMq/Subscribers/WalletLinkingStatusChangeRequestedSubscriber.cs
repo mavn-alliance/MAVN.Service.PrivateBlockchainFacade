@@ -30,7 +30,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
             if (message.Direction == LinkingDirection.Link)
             {
                 await _handler.HandleWalletLinkingAsync(message.EventId, message.CustomerId,
-                    message.MasterWalletAddress, message.PrivateAddress, message.PublicAddress, Money18.Parse(message.Fee.ToString()));
+                    message.MasterWalletAddress, message.PrivateAddress, message.PublicAddress, message.Fee);
             }
             else
             {

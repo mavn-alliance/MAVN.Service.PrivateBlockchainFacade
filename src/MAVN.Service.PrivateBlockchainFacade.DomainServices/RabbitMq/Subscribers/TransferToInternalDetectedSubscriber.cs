@@ -28,7 +28,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.DomainServices.RabbitMq.Subscribe
         protected override async Task ProcessMessageAsync(TransferToInternalDetectedEvent message)
         {
             await _handler.HandleAsync(message.PublicTransferId, message.PrivateAddress, message.PublicAddress,
-                Money18.Parse(message.Amount.ToString()));
+                message.Amount);
 
             _log.Info("Processed TransferToInternalDetectedEvent", message);
         }
