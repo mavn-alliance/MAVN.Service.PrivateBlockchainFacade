@@ -5,7 +5,7 @@
     <RootNamespace>MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Lykke.Common.MsSql" Version="2.3.0" />
+    <PackageReference Include="MAVN.Common.MsSql" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />

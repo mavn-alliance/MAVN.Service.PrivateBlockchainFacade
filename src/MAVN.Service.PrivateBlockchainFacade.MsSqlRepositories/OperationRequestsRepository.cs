@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Common;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;

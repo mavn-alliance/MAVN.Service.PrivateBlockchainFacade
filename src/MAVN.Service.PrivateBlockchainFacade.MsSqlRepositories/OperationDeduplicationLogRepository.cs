@@ -1,7 +1,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication;

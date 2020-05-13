@@ -1,6 +1,6 @@
 using Autofac;
 using JetBrains.Annotations;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Common;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
