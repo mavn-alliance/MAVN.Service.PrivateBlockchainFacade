@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;

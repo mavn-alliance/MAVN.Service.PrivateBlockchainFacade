@@ -2,7 +2,7 @@ using System.Data.Common;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication;
 

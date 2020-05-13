@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks; 
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
