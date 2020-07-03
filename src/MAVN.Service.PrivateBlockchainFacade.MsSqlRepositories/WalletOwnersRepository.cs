@@ -1,7 +1,7 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Common.Log;
 using Lykke.Common.Log;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Wallets;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
@@ -11,10 +11,10 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
 {
     public class WalletOwnersRepository : IWalletOwnersRepository
     {
-        private readonly MsSqlContextFactory<PbfContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<PbfContext> _contextFactory;
         private readonly ILog _log;
 
-        public WalletOwnersRepository(MsSqlContextFactory<PbfContext> contextFactory, ILogFactory logFactory)
+        public WalletOwnersRepository(PostgreSQLContextFactory<PbfContext> contextFactory, ILogFactory logFactory)
         {
             _contextFactory = contextFactory;
             _log = logFactory.CreateLog(this);

@@ -1,24 +1,24 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks; 
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using Microsoft.EntityFrameworkCore;
 using MoreLinq;
+using Npgsql;
 
 namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
 {
     public class OperationsRepository : IOperationsRepository
     {
-        private readonly MsSqlContextFactory<PbfContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<PbfContext> _contextFactory;
 
-        public OperationsRepository(MsSqlContextFactory<PbfContext> contextFactory)
+        public OperationsRepository(PostgreSQLContextFactory<PbfContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }
@@ -85,8 +85,8 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
                 }
                 catch (DbUpdateException e)
                 {
-                    if (e.InnerException is SqlException sqlException &&
-                        sqlException.Number == MsSqlErrorCodes.DuplicateIndex)
+                    if (e.InnerException is PostgresException sqlException &&
+                        sqlException.SqlState == PostgresErrorCodes.UniqueViolation)
                     {
                         throw new DuplicateException(hash);
                     }

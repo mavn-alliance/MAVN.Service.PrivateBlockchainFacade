@@ -1,19 +1,20 @@
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
 {
     public class WalletLinkingDeduplicationLogRepository : IDeduplicationLogRepository<WalletLinkingDeduplicationLogEntity>
     {
-        private readonly MsSqlContextFactory<PbfContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<PbfContext> _contextFactory;
 
-        public WalletLinkingDeduplicationLogRepository(MsSqlContextFactory<PbfContext> contextFactory)
+        public WalletLinkingDeduplicationLogRepository(PostgreSQLContextFactory<PbfContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }
@@ -32,8 +33,8 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
                 }
                 catch (DbUpdateException e)
                 {
-                    if (e.InnerException is SqlException sqlException &&
-                        sqlException.Number == MsSqlErrorCodes.PrimaryKeyConstraintViolation)
+                    if (e.InnerException is PostgresException sqlException &&
+                        sqlException.SqlState == PostgresErrorCodes.UniqueViolation)
                     {
                         return true;
                     }

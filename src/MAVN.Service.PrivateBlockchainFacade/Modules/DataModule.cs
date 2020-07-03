@@ -1,6 +1,5 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Common;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
@@ -10,6 +9,7 @@ using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication;
 using MAVN.Service.PrivateBlockchainFacade.Settings;
 using Lykke.SettingsReader;
+using MAVN.Persistence.PostgreSQL.Legacy;
 
 namespace MAVN.Service.PrivateBlockchainFacade.Modules
 {
@@ -27,7 +27,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterMsSql(
+            builder.RegisterPostgreSQL(
                 _dbSettings.DataConnString,
                 connString => new PbfContext(connString, false, _dbSettings.CommandTimeoutSeconds ?? DefaultCommandTimeoutSeconds),
                 dbConn => new PbfContext(dbConn));

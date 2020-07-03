@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Common;
-using MAVN.Common.MsSql;
 using Lykke.Logs;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.PrivateBlockchainFacade.Contract.Operations;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.DomainServices.Common;
@@ -111,7 +111,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.Tests
                 .UseInMemoryDatabase(inMemoryDatabaseName)
                 .Options;
 
-            var dbFactory = new MsSqlContextFactory<PbfContext>(opts => new PbfContext(options, true), options);
+            var dbFactory = new PostgreSQLContextFactory<PbfContext>(opts => new PbfContext(options, true), options);
 
             _operationsRepository = new OperationsRepository(dbFactory);
 
