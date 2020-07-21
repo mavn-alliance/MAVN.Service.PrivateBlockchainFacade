@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Common;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 
@@ -15,7 +15,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
 {
     public class OperationRequestsRepository : IOperationRequestsRepository
     {
-        private readonly MsSqlContextFactory<PbfContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<PbfContext> _contextFactory;
         private readonly ISqlRepositoryHelper _sqlRepositoryHelper;
         
         static class NonceCounterSql
@@ -25,7 +25,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
         }
 
         public OperationRequestsRepository(
-            MsSqlContextFactory<PbfContext> contextFactory, 
+            PostgreSQLContextFactory<PbfContext> contextFactory, 
             ISqlRepositoryHelper sqlRepositoryHelper)
         {
             _contextFactory = contextFactory;
@@ -108,7 +108,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
             using (var context = _contextFactory.CreateDataContext())
             {
                 var nextNonceResult =
-                    await context.NonceCounters.FromSql(sqlText, masterWalletAddressParam).ToListAsync();
+                    await context.NonceCounters.FromSqlRaw(sqlText, masterWalletAddressParam).ToListAsync();
 
                 return nextNonceResult.Single();
             }

@@ -1,20 +1,20 @@
-using System;
-using System.Data.SqlClient;
+﻿using System;
 using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Deduplication;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
 {
     public class TransferDeduplicationLogRepository : IDeduplicationLogRepository<TransferDeduplicationLogEntity>
     {
-        private readonly MsSqlContextFactory<PbfContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<PbfContext> _contextFactory;
 
-        public TransferDeduplicationLogRepository(MsSqlContextFactory<PbfContext> contextFactory)
+        public TransferDeduplicationLogRepository(PostgreSQLContextFactory<PbfContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }
@@ -33,8 +33,8 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories
                 }
                 catch (DbUpdateException e)
                 {
-                    if (e.InnerException is SqlException sqlException &&
-                        sqlException.Number == MsSqlErrorCodes.PrimaryKeyConstraintViolation)
+                    if (e.InnerException is PostgresException sqlException &&
+                        sqlException.SqlState == PostgresErrorCodes.UniqueViolation)
                     {
                         return true;
                     }

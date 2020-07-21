@@ -1,14 +1,14 @@
-using System.Data.Common;
+﻿using System.Data.Common;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.PrivateBlockchainFacade.Domain.Features.Operations;
 using MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Entities.Deduplication;
 
 namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts
 {
-    public class PbfContext : MsSqlContext
+    public class PbfContext : PostgreSQLContext
     {
         private const string Schema = "private_blockchain_facade";
         
@@ -48,7 +48,7 @@ namespace MAVN.Service.PrivateBlockchainFacade.MsSqlRepositories.Contexts
         {
         }
 
-        protected override void OnLykkeModelCreating(ModelBuilder modelBuilder)
+        protected override void OnMAVNModelCreating(ModelBuilder modelBuilder)
         {
             var operationEntityBuilder = modelBuilder.Entity<OperationEntity>();
             operationEntityBuilder.Property(c => c.Type).HasConversion(new EnumToStringConverter<OperationType>());

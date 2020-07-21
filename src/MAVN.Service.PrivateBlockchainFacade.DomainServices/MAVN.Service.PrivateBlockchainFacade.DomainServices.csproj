@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Version>1.0.0</Version>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Lykke.RabbitMqBroker" Version="7.13.1" />
+    <PackageReference Include="Lykke.RabbitMqBroker" Version="7.13.3" />
     <PackageReference Include="MAVN.Job.EthereumBridge.Contract" Version="1.1.0" />
     <PackageReference Include="MAVN.Service.CrossChainTransfers.Contract" Version="1.1.0" />
     <PackageReference Include="MAVN.Service.CrossChainWalletLinker.Contract" Version="1.1.0" />
-    <PackageReference Include="MAVN.Service.CustomerProfile.Contract" Version="1.3.0" />
+    <PackageReference Include="MAVN.Service.CustomerProfile.Contract" Version="2.2.0" />
     <PackageReference Include="MAVN.Service.QuorumOperationExecutor.Client" Version="1.1.0" />
     <PackageReference Include="MAVN.Service.QuorumTransactionSigner.Client" Version="1.0.1" />
   </ItemGroup>
